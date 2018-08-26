@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Statische Sketches | OVM-Unterrichtsmaterial</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Statische Sketches" />
+<meta name="author" content="André Bauer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<meta property="og:description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<link rel="canonical" href="http://localhost:4000/u/bfi20/processing-grundlagen/lernjob-statische-sketches/" />
+<meta property="og:url" content="http://localhost:4000/u/bfi20/processing-grundlagen/lernjob-statische-sketches/" />
+<meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
+<script type="application/ld+json">
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Statische Sketches","@type":"WebPage","url":"http://localhost:4000/u/bfi20/processing-grundlagen/lernjob-statische-sketches/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/u/assets/vendor/sticky-kit.min.js"></script>
+  
+  <script src="/u/assets/vendor/processing.min.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/u/assets/css/ovm.css">
+  
+  <link rel="stylesheet" href="/u/assets/dist/main.css">
+
+  <script src="/u/assets/vendor/d3.min.js"></script>
+  <script src="/u/assets/vendor/function-plot.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
+      </div>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  <a class="text-lightest hover:text-white" href="/u/bfi20">
+	    BFI20
+	  </a>
+	  
+	  |
+     	  <a class="no-underline text-lightest hover:text-white" href="/u/bfi20/processing-grundlagen">
+	    Themenwoche Processing Grundlagen
+	  </a>
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Informationen</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/information-vorbereitung">IT-AE-PR-INFO-1.1 Vorbereitung</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="http://michaelkipp.de/processing/#main-toc"> Skript <q>Programmieren lernen</q></a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="https://processing.org/reference/"> Processing Language Reference (API)</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernjobs</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-statische-sketches">IT-AE-PR-LJ-1.1 Statische Sketches</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-interaktive-sketches">IT-AE-PR-LJ-1.2 Interaktive Sketches</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches">IT-AE-PR-LJ-1.3 Zustandsbasierte interaktive Sketches</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernsituationen</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernsituation-pong-spiel">IT-AE-PR-LS-1.1 Pong-Spiel</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernsituation-abprallender-ball">IT-AE-PR-LS-1.2 Abprallende Bälle</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
+	</div>
+      </div>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>24. August 2018 |
+      <h3 class="text-lg inline">Lernjob IT-AE-PR-LJ-1.1 </h3></div>
+    <h1 class="text-5xl mt-2">Statische Sketches</h1><h2 class="mt-2 text-3xl">Statische Grafiken mit Processing erstellen</h3><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;
+	
+      </span>
+    </p>
+  </header>
+
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_lernziele">Lernziele</a></li>
+<li><a href="#_beispiel">Beispiel</a></li>
+<li><a href="#_aufgaben">Aufgaben</a></li>
+<li><a href="#_hilfen">Hilfen</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_lernziele">Lernziele</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Ich habe mit Processing statische Sketches erstellt.</p>
+</li>
+<li>
+<p>Ich habe Farben für den
+<a href="https://processing.org/reference/background_.html">Hintergrund</a>,
+die <a href="https://processing.org/reference/fill_.html">Füllung</a> und die
+<a href="https://processing.org/reference/stroke_.html">Umrandung</a>
+ausgewählt und gesetzt.</p>
+</li>
+<li>
+<p>Ich habe die Grundformen
+<a href="https://processing.org/reference/ellipse_.htmlEllipse" class="bare">https://processing.org/reference/ellipse_.htmlEllipse</a>],
+<a href="https://processing.org/reference/rect_.html">Rechteck</a>,
+<a href="https://processing.org/reference/line_.html">Linie</a>,
+<a href="https://processing.org/reference/point_.html">Punkt</a> und
+<a href="https://processing.org/reference/arc_.html">Kreisausschnitt</a> sowie
+<a href="https://processing.org/reference/text_.html">Texte</a>
+in Sketches platziert.</p>
+</li>
+<li>
+<p>Ich habe die
+<a href="https://processing.org/reference/strokeCap_.html">Linienform</a> und
+<a href="https://processing.org/reference/strokeWeight_.html">-stärke</a> und die
+<a href="https://processing.org/reference/textSize_.html">Schriftgröße</a> definiert.</p>
+</li>
+<li>
+<p>Ich habe in der <a href="https://processing.org/reference/">Processing-Language-Reference</a> nachgeschaut, wie Befehle benutzt werden.</p>
+</li>
+<li>
+<p>Ich habe mit <a href="https://processing.org/reference/size_.html">size</a>
+die Größe eines Sketches festgelegt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_beispiel">Beispiel</h2>
+<div class="sectionbody">
+<div class="sm:block md:flex">
+<div class="listingblock">
+<div class="content">
+<pre>size(300,300);
+background(173,204,214);
+fill(49,87,100);
+strokeWeight(5);
+strokeJoin(ROUND);
+stroke(34,60,70);
+line(50,40,100,280);
+rect(30,70,60,30);
+fill(152,64,72);
+ellipse(100,200,100,70);
+strokeWeight(8);
+point(200,250);
+noStroke();
+arc(170,120,200,200,radians(-125),radians(35));
+fill(52,180,27);
+textSize(50);
+text("Processing", 10, 180);</pre>
+</div>
+</div>
+<div class="ml-3">
+  <canvas id="TwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn"></canvas></br>
+  <script type="application/processing" data-processing-target="TwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn">
+  size(300,300);
+background(173,204,214);
+fill(49,87,100);
+strokeWeight(5);
+strokeJoin(ROUND);
+stroke(34,60,70);
+line(50,40,100,280);
+rect(30,70,60,30);
+fill(152,64,72);
+ellipse(100,200,100,70);
+strokeWeight(8);
+point(200,250);
+noStroke();
+arc(170,120,200,200,radians(-125),radians(35));
+fill(52,180,27);
+textSize(50);
+text("Processing", 10, 180);
+  </script>
+  <button class="hidden" onclick="startSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn;
+
+    function startSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn() {
+      switchSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjnState(true);
+    }
+
+    function stopSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn() {
+      switchSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjnState(false);
+    }
+
+    function switchSketchTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjnState(on) {
+      if (!processingInstanceTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn) {
+        processingInstanceTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn = Processing.getInstanceById('TwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn');
+      }
+
+      if (on) {
+        processingInstanceTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn.loop();  // call Processing loop() function
+      } else {
+        processingInstanceTwzaxOQaFHkwGFLeNVCsLOFswTlkPiyGVLHzIKKfOyjZXUurjn.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aufgaben">Aufgaben</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Stellen Sie Ihre Ergbnisse als pde-Dateien in Ihrem
+	   E-Portfolio zur Verfügung.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Erstellen Sie die folgenden statischen Grafiken mit Processing.</p>
+</div>
+<div class="flex flex-wrap">
+<div class="ml-3">
+  <canvas id="ctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI"></canvas></br>
+  <script type="application/processing" data-processing-target="ctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI">
+  size(300,300);
+background(173,204,214);
+fill(49,87,100);
+strokeWeight(10);
+strokeJoin(ROUND);
+stroke(96,172,198);
+line(20,20,280,280);
+line(20,280,280,20);
+stroke(34,60,70);
+rect(100,100,100,100);
+  </script>
+  <button class="hidden" onclick="startSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancectOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI;
+
+    function startSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI() {
+      switchSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuIState(true);
+    }
+
+    function stopSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI() {
+      switchSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuIState(false);
+    }
+
+    function switchSketchctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuIState(on) {
+      if (!processingInstancectOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI) {
+        processingInstancectOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI = Processing.getInstanceById('ctOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI');
+      }
+
+      if (on) {
+        processingInstancectOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI.loop();  // call Processing loop() function
+      } else {
+        processingInstancectOGzGuAMEEzcYBsbfLcGnjzJPIgQCWRKuaZLuDJfqDTVINQuI.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+<div class="ml-3">
+  <canvas id="QqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX"></canvas></br>
+  <script type="application/processing" data-processing-target="QqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX">
+  size(300,300);
+background(173,204,214);
+fill(49,87,100);
+strokeWeight(8);
+strokeJoin(ROUND);
+stroke(34,60,70);
+ellipse(150,150,240,240);
+stroke(96,172,198);
+ellipse(150,150,180,180);
+stroke(34,60,70);
+ellipse(150,150,120,120);
+stroke(96,172,198);
+ellipse(150,150,60,60);
+  </script>
+  <button class="hidden" onclick="startSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX;
+
+    function startSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX() {
+      switchSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCXState(true);
+    }
+
+    function stopSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX() {
+      switchSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCXState(false);
+    }
+
+    function switchSketchQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCXState(on) {
+      if (!processingInstanceQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX) {
+        processingInstanceQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX = Processing.getInstanceById('QqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX');
+      }
+
+      if (on) {
+        processingInstanceQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX.loop();  // call Processing loop() function
+      } else {
+        processingInstanceQqcmBfPDJoqMLpgVONTJTtAnfYDEkSRDFQZCknryHWrVTTxxCX.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+<div class="ml-3">
+  <canvas id="pklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR"></canvas></br>
+  <script type="application/processing" data-processing-target="pklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR">
+  size(300,300);
+background(173,204,214);
+fill(49,87,100);
+strokeWeight(0);
+strokeJoin(ROUND);
+strokeCap(SQUARE);
+arc(150,150,180,180,radians(-45),radians(225));
+fill(152,64,72);
+arc(150,130,180,180,radians(-135),radians(-45));
+  </script>
+  <button class="hidden" onclick="startSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancepklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR;
+
+    function startSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR() {
+      switchSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiRState(true);
+    }
+
+    function stopSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR() {
+      switchSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiRState(false);
+    }
+
+    function switchSketchpklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiRState(on) {
+      if (!processingInstancepklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR) {
+        processingInstancepklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR = Processing.getInstanceById('pklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR');
+      }
+
+      if (on) {
+        processingInstancepklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR.loop();  // call Processing loop() function
+      } else {
+        processingInstancepklPqZEmBFhnUQPNyKgYunUtMzmmbQDogbwBDdLSEWwlSBhSiR.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hilfen">Hilfen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://michaelkipp.de/processing/01%20zeichnen.html">Zeichnen</a>
+von Michael Kipp</p>
+</li>
+<li>
+<p><a href="https://processing.org/reference/">Processing Language Reference (API)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
+
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+
+</div>
+
+	<div class="sm:w-128 min-w-0 mr-4">
+	  <!-- Lizenz -->
+	</div>
+      </div>
+      
+      
+    </footer>
+  </div>
+</div>
+</div>
+    <div id="tocfloat" class="hidden">
+    </div>
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
+  </body>
+</html>

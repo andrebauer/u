@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zustandsbasierte interaktive Sketches | OVM-Unterrichtsmaterial</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Zustandsbasierte interaktive Sketches" />
+<meta name="author" content="André Bauer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<meta property="og:description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<link rel="canonical" href="http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches/" />
+<meta property="og:url" content="http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches/" />
+<meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-26T13:30:57+02:00" />
+<script type="application/ld+json">
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Zustandsbasierte interaktive Sketches","dateModified":"2018-08-26T13:30:57+02:00","datePublished":"2018-08-26T13:30:57+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches/"},"url":"http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/u/assets/vendor/sticky-kit.min.js"></script>
+  
+  <script src="/u/assets/vendor/processing.min.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/u/assets/css/ovm.css">
+  
+  <link rel="stylesheet" href="/u/assets/dist/main.css">
+
+  <script src="/u/assets/vendor/d3.min.js"></script>
+  <script src="/u/assets/vendor/function-plot.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
+      </div>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  <a class="text-lightest hover:text-white" href="/u">
+	    
+	  </a>
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
+	</div>
+      </div>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>24. August 2018 |
+      <h3 class="text-lg inline">Lernjob IT-AE-PR-LJ-1.3 </h3></div>
+    <h1 class="text-5xl mt-2">Zustandsbasierte interaktive Sketches</h1><h2 class="mt-2 text-3xl">Zustandsbasierte interaktive Grafiken mit Processing erstellen</h3><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;
+	
+      </span>
+    </p>
+  </header>
+
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_lernziele">Lernziele</a></li>
+<li><a href="#_beispiele">Beispiele</a>
+<ul class="sectlevel2">
+<li><a href="#_farbwechsel">Farbwechsel</a></li>
+<li><a href="#_abprallender-ball">Abprallender Ball</a></li>
+</ul>
+</li>
+<li><a href="#_aufgaben">Aufgaben</a></li>
+<li><a href="#_hilfen">Hilfen</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Viele Sketches können nur mithilfe von Variablen realisiert werden,
+die den Systemzustand abbilden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lernziele">Lernziele</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zusätzlich zu den Zielen der Lernjobs <a href="../lernjob-statische-sketches">Statische Sketches</a> und <a href="../lernjob-interaktive-sketches">Interaktive Sketches</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ich habe Methoden zur Benutzerinteraktion wie z.B.
+<a href="https://processing.org/reference/mousePressed_.html">mousePressed()</a> oder
+<a href="https://processing.org/reference/keyPressed_.html">keyPressed()</a>
+eingesetzt und dazu deren Bedeutung und Verwendung in der
+<a href="https://processing.org/reference/">Processing-Language-Reference</a> nachgeschaut.</p>
+</li>
+<li>
+<p>Ich habe Variablen eingesetzt, um den Zustand des Systems abzubilden, und
+deren Werte gesetzt, geändert und ausgelesen.</p>
+</li>
+<li>
+<p>Ich habe mithilfe von Variablen und bedingten Anweisungen
+(<a href="https://processing.org/reference/if.html">if-Anweisung</a>, <a href="https://processing.org/reference/else.html">else if und else</a>)
+den Programmablauf gesteuert.</p>
+</li>
+<li>
+<p>Ich habe globale Variablen wie
+<a href="https://processing.org/reference/height.html">height</a> und
+<a href="https://processing.org/reference/width.html">width</a> verwendet,
+damit meine Sketches auch nach einer Größenveränderung mit <a href="https://processing.org/reference/size_.html">size</a>
+noch sinnvoll funktionieren.</p>
+</li>
+<li>
+<p>Ich habe Basisdatentypen wie
+<a href="https://processing.org/reference/int.html">int</a>,
+<a href="https://processing.org/reference/String.html">String</a>,
+<a href="https://processing.org/reference/boolean.html">boolean</a> und
+<a href="https://processing.org/reference/double.html">double</a> für
+Variablen ausgewählt und eingesetzt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_beispiele">Beispiele</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Funktion <a href="https://processing.org/reference/mousePressed_.html">mousePressed()</a> wird vom System ausgeführt, wenn
+die Maus gedrückt wurde. Im Beispiel ändert diese den Zustand der
+Variablen <code>bgcolor</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_farbwechsel">Farbwechsel</h3>
+<div class="sm:block md:flex">
+<div class="listingblock">
+<div class="content">
+<pre>String bgcolor = "blue";
+
+void setup() {
+  size(300,300);
+}
+
+void draw() {
+  if (bgcolor == "blue") {
+    background(173,204,214);
+  } else if (bgcolor == "red") {
+    background(152,64,72);
+  }
+}
+
+void mousePressed() {
+  if (bgcolor == "blue") {
+    bgcolor = "red";
+  } else {
+    bgcolor = "blue";
+  }
+}</pre>
+</div>
+</div>
+<div class="ml-3">
+  <canvas id="NvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ"></canvas></br>
+  <script type="application/processing" data-processing-target="NvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ">
+  String bgcolor = "blue";
+
+void setup() {
+  size(300,300);
+}
+
+void draw() {
+  if (bgcolor == "blue") {
+    background(173,204,214);
+  } else if (bgcolor == "red") {
+    background(152,64,72);
+  }
+}
+
+void mousePressed() {
+  if (bgcolor == "blue") {
+    bgcolor = "red";
+  } else {
+    bgcolor = "blue";
+  }
+}
+  </script>
+  <button class="hidden" onclick="startSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ;
+
+    function startSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ() {
+      switchSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZState(true);
+    }
+
+    function stopSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ() {
+      switchSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZState(false);
+    }
+
+    function switchSketchNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZState(on) {
+      if (!processingInstanceNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ) {
+        processingInstanceNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ = Processing.getInstanceById('NvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ');
+      }
+
+      if (on) {
+        processingInstanceNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ.loop();  // call Processing loop() function
+      } else {
+        processingInstanceNvkgnODuQRRtzLuYIadSkAPCfpJyVmfnZxQIXVvqUMULXdGgUZ.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abprallender-ball">Abprallender Ball</h3>
+<div class="paragraph">
+<p>Die Variablen <code>x</code> und <code>y</code> beinhalten die aktuelle Position des Balls,
+die Variablen <code>dx</code> und <code>dy</code> die Bewegungsrichtung.
+Die Variable <code>r</code> steht für den Radius des Balls.</p>
+</div>
+<div class="sm:block md:flex">
+<div class="listingblock">
+<div class="content">
+<pre>int x, y, dx, dy, r;
+
+void setup() {
+  x = 125;
+  y = 10;
+  dx = 0;
+  dy = 11;
+  r = 20;
+  size(300,300);
+  background(173,204,214);
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  ellipse(x, y, 2*r, 2*r);
+  x = x + dx;
+  y = y + dy;
+  if (y > height || y < 0) {
+    dy = -1 * dy;
+  }
+}</pre>
+</div>
+</div>
+<div class="ml-3">
+  <canvas id="YwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY"></canvas></br>
+  <script type="application/processing" data-processing-target="YwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY">
+  int x, y, dx, dy, r;
+
+void setup() {
+  x = 125;
+  y = 10;
+  dx = 0;
+  dy = 11;
+  r = 20;
+  size(300,300);
+  background(173,204,214);
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  ellipse(x, y, 2*r, 2*r);
+  x = x + dx;
+  y = y + dy;
+  if (y > height || y < 0) {
+    dy = -1 * dy;
+  }
+}
+  </script>
+  <button class="" onclick="startSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY();">
+    Start
+  </button>
+  <button class="" onclick="stopSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY;
+
+    function startSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY() {
+      switchSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeYState(true);
+    }
+
+    function stopSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY() {
+      switchSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeYState(false);
+    }
+
+    function switchSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeYState(on) {
+      if (!processingInstanceYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY) {
+        processingInstanceYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY = Processing.getInstanceById('YwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY');
+      }
+
+      if (on) {
+        processingInstanceYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY.loop();  // call Processing loop() function
+      } else {
+        processingInstanceYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+    $(document).ready(() => stopSketchYwMrFvPHooVcOoadXIsVBuzuviNeyzIOIPzqkGOZlwILZuRgeY());
+  </script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aufgaben">Aufgaben</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Stellen Sie Ihre Ergbnisse als pde-Dateien in Ihrem
+	   E-Portfolio zur Verfügung.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Erstellen Sie die folgenden interaktiven Sketches mit Processing.</p>
+</div>
+<div class="flex flex-wrap">
+<div>
+<div class="ml-3">
+  <canvas id="lgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU"></canvas></br>
+  <script type="application/processing" data-processing-target="lgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU">
+  int state = 0;
+
+void setup() {
+  size(300,300);
+}
+
+void draw() {
+  background(173,204,214);
+  strokeWeight(10);
+  strokeJoin(ROUND);
+  if (state == 0) {
+    fill(152,64,72);
+  } else if (state == 1) {
+    fill(23,43,112);
+  } else {
+    fill(43,112,67);
+  }
+  rect(100,100,100,100);
+}
+
+void mousePressed() {
+  if (mouseX > 100 && mouseX < 200
+     && mouseY > 100 && mouseY < 200) {
+    state = (state + 1) % 3;
+  }
+}
+  </script>
+  <button class="hidden" onclick="startSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancelgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU;
+
+    function startSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU() {
+      switchSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRUState(true);
+    }
+
+    function stopSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU() {
+      switchSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRUState(false);
+    }
+
+    function switchSketchlgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRUState(on) {
+      if (!processingInstancelgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU) {
+        processingInstancelgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU = Processing.getInstanceById('lgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU');
+      }
+
+      if (on) {
+        processingInstancelgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU.loop();  // call Processing loop() function
+      } else {
+        processingInstancelgsWtezuAfPpLNJlUWdtTprzlDlojahEHmfzXXzPXTwzqHAxRU.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+<div class="paragraph">
+<p>Klicken Sie auf das Rechteck.</p>
+</div>
+</div><div>
+<div class="ml-3">
+  <canvas id="gOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ"></canvas></br>
+  <script type="application/processing" data-processing-target="gOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ">
+  int x, y, dx, dy, r;
+
+void setup() {
+  x = 10;
+  y = 10;
+  dx = 8;
+  dy = 12;
+  r = 20;
+  size(300,300);
+  background(173,204,214);
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  ellipse(x, y, 2*r, 2*r);
+  x = x + dx;
+  y = y + dy;
+  if (y > height - r && dy > 0 || y < r && dy < 0) {
+    dy = -1 * dy;
+  }
+  if (x > width - r && dx > 0 || x < r && dx < 0) {
+    dx = -1 * dx;
+  }
+}
+  </script>
+  <button class="" onclick="startSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ();">
+    Start
+  </button>
+  <button class="" onclick="stopSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancegOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ;
+
+    function startSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ() {
+      switchSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQState(true);
+    }
+
+    function stopSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ() {
+      switchSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQState(false);
+    }
+
+    function switchSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQState(on) {
+      if (!processingInstancegOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ) {
+        processingInstancegOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ = Processing.getInstanceById('gOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ');
+      }
+
+      if (on) {
+        processingInstancegOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ.loop();  // call Processing loop() function
+      } else {
+        processingInstancegOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+    $(document).ready(() => stopSketchgOXwCvoaKmKmSGWJwZuxljIrqMygBdWyHDFxyjjBGtLJpxfqHQ());
+  </script>
+</div>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hilfen">Hilfen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://michaelkipp.de/processing/01%20zeichnen.html">Zeichnen</a>,
+<a href="http://michaelkipp.de/processing/03%20interaktion.html">Interaktion</a>,
+<a href="http://michaelkipp.de/processing/04%20variablen.html">Variablen</a> und
+<a href="http://michaelkipp.de/processing/05%20ifanweisung.html">If-Anweisung</a>
+von Michael Kipp</p>
+</li>
+<li>
+<p><a href="https://processing.org/reference/">Processing Language Reference (API)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
+
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+
+</div>
+
+	<div class="sm:w-128 min-w-0 mr-4">
+	  <!-- Lizenz -->
+	</div>
+      </div>
+      
+      
+    </footer>
+  </div>
+</div>
+</div>
+    <div id="tocfloat" class="hidden">
+    </div>
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
+  </body>
+</html>

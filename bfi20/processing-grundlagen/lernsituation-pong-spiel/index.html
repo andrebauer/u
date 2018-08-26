@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Pong-Spiel | OVM-Unterrichtsmaterial</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Pong-Spiel" />
+<meta name="author" content="André Bauer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<meta property="og:description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<link rel="canonical" href="http://localhost:4000/u/bfi20/processing-grundlagen/lernsituation-pong-spiel/" />
+<meta property="og:url" content="http://localhost:4000/u/bfi20/processing-grundlagen/lernsituation-pong-spiel/" />
+<meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
+<script type="application/ld+json">
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Pong-Spiel","@type":"WebPage","url":"http://localhost:4000/u/bfi20/processing-grundlagen/lernsituation-pong-spiel/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/u/assets/vendor/sticky-kit.min.js"></script>
+  
+  <script src="/u/assets/vendor/processing.min.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/u/assets/css/ovm.css">
+  
+  <link rel="stylesheet" href="/u/assets/dist/main.css">
+
+  <script src="/u/assets/vendor/d3.min.js"></script>
+  <script src="/u/assets/vendor/function-plot.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
+      </div>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  <a class="text-lightest hover:text-white" href="/u/bfi20">
+	    BFI20
+	  </a>
+	  
+	  |
+     	  <a class="no-underline text-lightest hover:text-white" href="/u/bfi20/processing-grundlagen">
+	    Themenwoche Processing Grundlagen
+	  </a>
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Informationen</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/information-vorbereitung">IT-AE-PR-INFO-1.1 Vorbereitung</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="http://michaelkipp.de/processing/#main-toc"> Skript <q>Programmieren lernen</q></a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="https://processing.org/reference/"> Processing Language Reference (API)</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernjobs</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-statische-sketches">IT-AE-PR-LJ-1.1 Statische Sketches</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-interaktive-sketches">IT-AE-PR-LJ-1.2 Interaktive Sketches</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernjob-zustandsbasierte-interaktive-sketches">IT-AE-PR-LJ-1.3 Zustandsbasierte interaktive Sketches</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernsituationen</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernsituation-pong-spiel">IT-AE-PR-LS-1.1 Pong-Spiel</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi20/processing-grundlagen/lernsituation-abprallender-ball">IT-AE-PR-LS-1.2 Abprallende Bälle</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
+	</div>
+      </div>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>24. August 2018 |
+      <h3 class="text-lg inline">Lernsituation IT-AE-PR-LS-1.1 </h3></div>
+    <h1 class="text-5xl mt-2">Pong-Spiel</h1><h2 class="mt-2 text-3xl">Ein Pong-Spiel mit Processing erstellen</h3><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;
+	
+      </span>
+    </p>
+  </header>
+
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_ziele">Ziele</a></li>
+<li><a href="#_beispiel">Beispiel</a>
+<ul class="sectlevel2">
+<li><a href="#_kollisionserkennung">Kollisionserkennung</a></li>
+</ul>
+</li>
+<li><a href="#_aufgabe">Aufgabe</a></li>
+<li><a href="#_hilfen">Hilfen</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_ziele">Ziele</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zusätzlich zu den Zielen der Lernjobs <a href="../lernjob-statische-sketches">Statische Sketches</a>, <a href="../lernjob-interaktive-sketches">Interaktive Sketches</a> und <a href="../lernjob-zustandsbasierte-interaktive-sketches">Zustandsbasierte interaktive Sketches</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ich habe mein Programm zur Stukturierung
+in mehrere Funktionen aufgeteilt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_beispiel">Beispiel</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_kollisionserkennung">Kollisionserkennung</h3>
+<div class="sm:block md:flex">
+<div class="listingblock">
+<div class="content">
+<pre>int r1, r2;
+
+void setup() {
+  size(300,300);
+  r1 = 30;
+  r2 = 25;
+}
+
+/**
+ * Gib genau dann den Wert true zurück,
+ * sich zwei Kreise mit den
+ * Mittelpunkten M1(x1, y1) und M2(x2,y2)
+ * und Radien r1 und r2 überlappen.
+ */
+boolean overlap(int x1, int y1, int x2, int y2, int r1, int r2) {
+  boolean overlaps = dist(x1,y1,x2,y2) <= r1 + r2;
+  return overlaps;
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  if (overlap(150,150,mouseX,mouseY,r1,r2)) {
+    fill(152,64,72);
+  }
+  ellipse(150,150,2*r1,2*r1);
+  ellipse(mouseX,mouseY,2*r2,2*r2);
+}</pre>
+</div>
+</div>
+<div class="ml-3">
+  <canvas id="qOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ"></canvas></br>
+  <script type="application/processing" data-processing-target="qOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ">
+  int r1, r2;
+
+void setup() {
+  size(300,300);
+  r1 = 30;
+  r2 = 25;
+}
+
+/**
+ * Gib genau dann den Wert true zurück,
+ * sich zwei Kreise mit den
+ * Mittelpunkten M1(x1, y1) und M2(x2,y2)
+ * und Radien r1 und r2 überlappen.
+ */
+boolean overlap(int x1, int y1, int x2, int y2, int r1, int r2) {
+  boolean overlaps = dist(x1,y1,x2,y2) <= r1 + r2;
+  return overlaps;
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  if (overlap(150,150,mouseX,mouseY,r1,r2)) {
+    fill(152,64,72);
+  }
+  ellipse(150,150,2*r1,2*r1);
+  ellipse(mouseX,mouseY,2*r2,2*r2);
+}
+  </script>
+  <button class="hidden" onclick="startSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ;
+
+    function startSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ() {
+      switchSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQState(true);
+    }
+
+    function stopSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ() {
+      switchSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQState(false);
+    }
+
+    function switchSketchqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQState(on) {
+      if (!processingInstanceqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ) {
+        processingInstanceqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ = Processing.getInstanceById('qOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ');
+      }
+
+      if (on) {
+        processingInstanceqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ.loop();  // call Processing loop() function
+      } else {
+        processingInstanceqOKDJjsdOsqUMWKzhAttNqQBsiHCatxNdFEotuJydXrhAzjBqQ.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aufgabe">Aufgabe</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Stellen Sie Ihr Ergbnis als pde-Datei in Ihrem
+	   E-Portfolio zur Verfügung.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Erstellen Sie ein Pong-Spiel: Ergänzen Sie den Sketch
+&#8222;Abprallender Ball&#8220; um
+ein steuerbares Panel, an dem der Ball ebenfalls abprallt.</p>
+</div>
+<div class="ml-3">
+  <canvas id="nkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP"></canvas></br>
+  <script type="application/processing" data-processing-target="nkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP">
+  int x, y, dx, dy, r;
+int barY;
+int barW;
+
+
+void restart() {
+  x = 10;
+  y = 10;
+  dx = 4;
+  dy = 6;
+  r = 20;
+  barY = 290;
+  barW = 80;
+}
+
+void setup() {
+  restart();
+  size(300,300);
+  background(173,204,214);
+
+}
+
+
+boolean overlap(int x1, int y1, int x2, int y2, int r1, int r2) {
+  return dist(x1,y1,x2,y2) <= r1 + r2;
+}
+
+boolean hitsmid(int x, int y, int r, int bx, int by, int bw, int bWeight) {
+  int bwh = bWeight / 2;
+  return (by - y < r + bwh && x + bWeight > bx && x - bWeight < bx + bw);
+}
+
+void draw() {
+  background(173,204,214);
+  strokeWeight(8);
+  fill(49,87,100);
+  line(mouseX,barY,mouseX+barW,barY);
+  if (hitsmid(x,y,r,mouseX,barY,barW,8)) {
+    if (dy > 0) {
+      dy = -1 * dy;
+    }
+  } else if (overlap(x,y,mouseX,barY,r,4)) {
+    dy = -1 * dy;
+    dx = -1 * dx;
+  } else if (overlap(x,y,mouseX+barW,barY,r,4)) {
+    dy = -1 * dy;
+    dx = -1 * dx;
+  }
+  strokeWeight(1);
+  ellipse(x, y, 2*r, 2*r);
+
+  if(y > height + r + 1) {
+    dx = 0;
+    dy = 0;
+  }
+
+  x = x + dx;
+  y = y + dy;
+  if (/*y > height - r && dy > 0 ||*/ y < r && dy < 0) {
+    dy = -1 * dy;
+  }
+  if (x > width - r && dx > 0 || x < r && dx < 0) {
+    dx = -1 * dx;
+  }
+}
+
+void mousePressed() {
+  restart();
+}
+  </script>
+  <button class="" onclick="startSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP();">
+    Start
+  </button>
+  <button class="" onclick="stopSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancenkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP;
+
+    function startSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP() {
+      switchSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLPState(true);
+    }
+
+    function stopSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP() {
+      switchSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLPState(false);
+    }
+
+    function switchSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLPState(on) {
+      if (!processingInstancenkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP) {
+        processingInstancenkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP = Processing.getInstanceById('nkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP');
+      }
+
+      if (on) {
+        processingInstancenkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP.loop();  // call Processing loop() function
+      } else {
+        processingInstancenkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+    $(document).ready(() => stopSketchnkPWRXUjuThHPgzKdCYOppFvIFnqxFovGnUtPxvlGastnRFDLP());
+  </script>
+</div>
+<div class="paragraph">
+<p>Zum Neustart drücke eine Maus-Taste.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hilfen">Hilfen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://michaelkipp.de/processing/01%20zeichnen.html">Zeichnen</a>,
+<a href="http://michaelkipp.de/processing/03%20interaktion.html">Interaktion</a>,
+<a href="http://michaelkipp.de/processing/04%20variablen.html">Variablen</a>,
+<a href="http://michaelkipp.de/processing/05%20ifanweisung.html">If-Anweisung</a> und
+<a href="http://michaelkipp.de/processing/09%20funktionen.html">Funktionen</a>
+von von Michael Kipp</p>
+</li>
+<li>
+<p><a href="https://processing.org/reference/" class="bare">https://processing.org/reference/</a>[Processing Language Reference (API)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
+
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+
+</div>
+
+	<div class="sm:w-128 min-w-0 mr-4">
+	  <!-- Lizenz -->
+	</div>
+      </div>
+      
+      
+    </footer>
+  </div>
+</div>
+</div>
+    <div id="tocfloat" class="hidden">
+    </div>
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Interaktive Sketches | OVM-Unterrichtsmaterial</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Interaktive Sketches" />
+<meta name="author" content="André Bauer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<meta property="og:description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<link rel="canonical" href="http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-interaktive-sketches/" />
+<meta property="og:url" content="http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-interaktive-sketches/" />
+<meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-26T13:30:57+02:00" />
+<script type="application/ld+json">
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Interaktive Sketches","dateModified":"2018-08-26T13:30:57+02:00","datePublished":"2018-08-26T13:30:57+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-interaktive-sketches/"},"url":"http://localhost:4000/u/docs/anwendungsentwicklung/processing-grundlagen/lernjob-interaktive-sketches/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/u/assets/vendor/sticky-kit.min.js"></script>
+  
+  <script src="/u/assets/vendor/processing.min.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/u/assets/css/ovm.css">
+  
+  <link rel="stylesheet" href="/u/assets/dist/main.css">
+
+  <script src="/u/assets/vendor/d3.min.js"></script>
+  <script src="/u/assets/vendor/function-plot.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
+      </div>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  <a class="text-lightest hover:text-white" href="/u">
+	    
+	  </a>
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
+	</div>
+      </div>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>24. August 2018 |
+      <h3 class="text-lg inline">Lernjob IT-AE-PR-LJ-1.2 </h3></div>
+    <h1 class="text-5xl mt-2">Interaktive Sketches</h1><h2 class="mt-2 text-3xl">Interaktive Grafiken mit Processing erstellen</h3><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;
+	
+      </span>
+    </p>
+  </header>
+
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_lernziele">Lernziele</a></li>
+<li><a href="#_beispiel">Beispiel</a></li>
+<li><a href="#_aufgaben">Aufgaben</a></li>
+<li><a href="#_hilfen">Hilfen</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Die folgenden Sketches sind interaktiv und reagieren auf die Position des
+Mauszeigers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lernziele">Lernziele</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zusätzlich zu den Zielen des Lernjobs <a href="../lernjob-statische-sketches">Statische Sketches</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ich habe dynamische, iteraktive Sketches erstellt und
+dazu die Funktionen <a href="https://processing.org/reference/setup_.html">setup()</a> und <a href="https://processing.org/reference/draw_.html">draw()</a> gezielt eingesetzt.</p>
+</li>
+<li>
+<p>Ich habe globale Variablen wie z.&#160;B.
+<a href="https://processing.org/reference/mouseX.html">mouseX</a>,
+<a href="https://processing.org/reference/mouseY.html">mouseY</a> und
+<a href="https://processing.org/reference/mousePressed.html">mousePressed</a>
+für die Interaktion mit dem Bentuzer eingesetzt und dazu deren
+Bedeutung in der
+<a href="https://processing.org/reference/">Processing-Referenz</a>
+nachgeschaut.</p>
+</li>
+<li>
+<p>Ich habe mit bedingten Anweisungen
+(<a href="https://processing.org/reference/if.html">if-Anweisungen</a>)
+den Programmablauf gesteuert.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_beispiel">Beispiel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Interaktive Sketches bestehen zumindest aus den beiden
+Funktionen <a href="https://processing.org/reference/setup_.html">setup()</a> und <a href="https://processing.org/reference/draw_.html">draw()</a>.
+Die Funktion <a href="https://processing.org/reference/setup_.html">setup()</a> wird beim Start genau
+einmal ausgeführt, die Funktion <a href="https://processing.org/reference/draw_.html">draw()</a> wird nach <a href="https://processing.org/reference/setup_.html">setup()</a> bis
+zum Programmabbruch
+wiederholt (&#8222;endlos&#8220;) ausgeführt.</p>
+</div>
+<div class="sm:block md:flex">
+<div class="listingblock">
+<div class="content">
+<pre>void setup() {
+  size(300,300);
+  noStroke();
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  if (mouseX > 0 && mouseX < 100) {
+    rect(0,0,100,300);
+  }
+  if (mouseX >= 100 && mouseX < 200) {
+    rect(100,0,100,300);
+  }
+  if (mouseX >= 200 && mouseX < 300) {
+    rect(200,0,100,300);
+  }
+}</pre>
+</div>
+</div>
+<div class="ml-3">
+  <canvas id="dDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt"></canvas></br>
+  <script type="application/processing" data-processing-target="dDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt">
+  void setup() {
+  size(300,300);
+  noStroke();
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  if (mouseX > 0 && mouseX < 100) {
+    rect(0,0,100,300);
+  }
+  if (mouseX >= 100 && mouseX < 200) {
+    rect(100,0,100,300);
+  }
+  if (mouseX >= 200 && mouseX < 300) {
+    rect(200,0,100,300);
+  }
+}
+  </script>
+  <button class="hidden" onclick="startSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancedDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt;
+
+    function startSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt() {
+      switchSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJaltState(true);
+    }
+
+    function stopSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt() {
+      switchSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJaltState(false);
+    }
+
+    function switchSketchdDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJaltState(on) {
+      if (!processingInstancedDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt) {
+        processingInstancedDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt = Processing.getInstanceById('dDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt');
+      }
+
+      if (on) {
+        processingInstancedDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt.loop();  // call Processing loop() function
+      } else {
+        processingInstancedDnIUabvrhDlgeLKCXZMYMqCYyPRNxItJqjznTLZTfPCVJJalt.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aufgaben">Aufgaben</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Stellen Sie Ihre Ergbnisse als pde-Dateien in Ihrem
+	   E-Portfolio zur Verfügung.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Erstellen Sie die folgenden interaktiven Sketches mit Processing,
+die auf die Position des Mauszeigers reagieren.</p>
+</div>
+<div class="flex flex-wrap">
+<div class="ml-3">
+  <canvas id="sKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO"></canvas></br>
+  <script type="application/processing" data-processing-target="sKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO">
+  void setup() {
+  size(300,300);
+}
+
+void draw() {
+  background(173,204,214);
+  fill(49,87,100);
+  strokeWeight(10);
+  strokeJoin(ROUND);
+  if (mouseX > 100 && mouseX < 200 && mouseY > 100 && mouseY < 200) {
+    fill(152,64,72);
+   }
+   rect(100,100,100,100);
+}
+  </script>
+  <button class="hidden" onclick="startSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstancesKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO;
+
+    function startSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO() {
+      switchSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBROState(true);
+    }
+
+    function stopSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO() {
+      switchSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBROState(false);
+    }
+
+    function switchSketchsKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBROState(on) {
+      if (!processingInstancesKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO) {
+        processingInstancesKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO = Processing.getInstanceById('sKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO');
+      }
+
+      if (on) {
+        processingInstancesKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO.loop();  // call Processing loop() function
+      } else {
+        processingInstancesKXVLIeHQYNpjbrskJtitiMIbkPaziTWfkiRPIinuargWoZBRO.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+<div class="ml-3">
+  <canvas id="DLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ"></canvas></br>
+  <script type="application/processing" data-processing-target="DLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ">
+  void setup() {
+  size(300,300);
+}
+
+float d() {
+  return dist(mouseX,mouseY,150,150);
+}
+
+void chooseFillColor(int lower, int upper) {
+  if (d() < upper && d() > lower) {
+    fill(152,64,72);
+  } else {
+    fill(49,87,100);
+  }
+}
+
+void draw() {
+  background(173,204,214);
+  strokeWeight(8);
+  strokeJoin(ROUND);
+  stroke(34,60,70);
+  chooseFillColor(90,120);
+  ellipse(150,150,240,240);
+  stroke(96,172,198);
+  chooseFillColor(60,90);
+  ellipse(150,150,180,180);
+  stroke(34,60,70);
+  chooseFillColor(30,60);
+  ellipse(150,150,120,120);
+  stroke(96,172,198);
+  chooseFillColor(0,30);
+  ellipse(150,150,60,60);
+}
+  </script>
+  <button class="hidden" onclick="startSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ();">
+    Start
+  </button>
+  <button class="hidden" onclick="stopSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ();">
+    Stop
+  </button>
+  <script type="application/javascript">
+    var processingInstanceDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ;
+
+    function startSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ() {
+      switchSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJState(true);
+    }
+
+    function stopSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ() {
+      switchSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJState(false);
+    }
+
+    function switchSketchDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJState(on) {
+      if (!processingInstanceDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ) {
+        processingInstanceDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ = Processing.getInstanceById('DLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ');
+      }
+
+      if (on) {
+        processingInstanceDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ.loop();  // call Processing loop() function
+      } else {
+        processingInstanceDLorTKfaHBdnXTZpWwewytrvhFOuulmsYumCXHBOUWkGghtUIJ.noLoop(); // stop animation, call noLoop()
+      }
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hilfen">Hilfen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://michaelkipp.de/processing/01%20zeichnen.html">Zeichnen</a>,
+<a href="http://michaelkipp.de/processing/03%20interaktion.html">Interaktion</a> und
+<a href="http://michaelkipp.de/processing/05%20ifanweisung.html">If-Anweisung</a>
+von Michael Kipp</p>
+</li>
+<li>
+<p>die <a href="https://processing.org/reference/">Processing Language Reference (API)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
+
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+
+</div>
+
+	<div class="sm:w-128 min-w-0 mr-4">
+	  <!-- Lizenz -->
+	</div>
+      </div>
+      
+      
+    </footer>
+  </div>
+</div>
+</div>
+    <div id="tocfloat" class="hidden">
+    </div>
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
+  </body>
+</html>

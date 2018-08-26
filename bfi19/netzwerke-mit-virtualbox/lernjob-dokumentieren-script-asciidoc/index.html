@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Dokumentieren mit Script und AsciiDoc | OVM-Unterrichtsmaterial</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Dokumentieren mit Script und AsciiDoc" />
+<meta name="author" content="André Bauer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<meta property="og:description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
+<link rel="canonical" href="http://localhost:4000/u/bfi19/netzwerke-mit-virtualbox/lernjob-dokumentieren-script-asciidoc/" />
+<meta property="og:url" content="http://localhost:4000/u/bfi19/netzwerke-mit-virtualbox/lernjob-dokumentieren-script-asciidoc/" />
+<meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
+<script type="application/ld+json">
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Dokumentieren mit Script und AsciiDoc","@type":"WebPage","url":"http://localhost:4000/u/bfi19/netzwerke-mit-virtualbox/lernjob-dokumentieren-script-asciidoc/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/u/assets/vendor/sticky-kit.min.js"></script>
+  
+  <script src="/u/assets/vendor/processing.min.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/u/assets/css/ovm.css">
+  
+  <link rel="stylesheet" href="/u/assets/dist/main.css">
+
+  <script src="/u/assets/vendor/d3.min.js"></script>
+  <script src="/u/assets/vendor/function-plot.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
+      </div>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  <a class="text-lightest hover:text-white" href="/u/bfi19">
+	    BFI19
+	  </a>
+	  
+	  |
+     	  <a class="no-underline text-lightest hover:text-white" href="/u/bfi19/netzwerke-mit-virtualbox">
+	    Themenwoche Netzwerke mit VirtualBox
+	  </a>
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernjobs</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi19/netzwerke-mit-virtualbox/lernjob-dokumentieren-script-asciidoc"> Dokumentieren mit Script und Asciidoc</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi19/netzwerke-mit-virtualbox/lernjob-netzwerke-mit-virtualbox"> Netzwerke mit Virtualbox</a>
+	  
+	</p>
+      </li><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi19/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server"> SSH-Client und -Server</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+  
+  <div class="sm:w-64 min-w-0 mt-2 mr-4 mb-2">
+    <h3 class="text-lg text-blue-lighter font-normal mt-0">Lernsituationen</h3>
+    <ul class="ml-0 mb-0 list-reset"><li class="">
+	<p class="text-sm">
+	  
+	  <a class="no-underline text-blue-lighter hover:text-white visited:text-blue-light" href="/u/bfi19/netzwerke-mit-virtualbox/lernsituation-netzwerke-mit-virtualbox"> Netzwerke mit Virtualbox</a>
+	  
+	</p>
+      </li></ul>    
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
+	</div>
+      </div>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>22. Mai 2018 |
+      <h3 class="text-lg inline">Lernjob BS-VM-LJ-3.1 </h3></div>
+    <h1 class="text-5xl mt-2">Dokumentieren mit Script und AsciiDoc</h1><h2 class="mt-2 text-3xl">Lernjob IT-BS-VM-LJ-3.1</h3><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;
+	
+      </span>
+    </p>
+  </header>
+
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_shell-sessions-mit-script-documentieren">1. Shell-Sessions mit Script documentieren</a>
+<ul class="sectlevel2">
+<li><a href="#_monochrome-ausgabe-der-shell">Monochrome Ausgabe der Shell</a></li>
+<li><a href="#_aufgabe-1">Aufgabe 1</a></li>
+</ul>
+</li>
+<li><a href="#_asciidoc">2. AsciiDoc</a>
+<ul class="sectlevel2">
+<li><a href="#_installation-von-asciidoctor">2.1. Installation von Asciidoctor</a></li>
+<li><a href="#_erste-schritte">2.2. Erste Schritte</a></li>
+<li><a href="#_aufgabe-2">Aufgabe 2</a></li>
+<li><a href="#_diagramme-mit-asciidoctor-erstellen">2.3. Diagramme mit Asciidoctor erstellen</a>
+<ul class="sectlevel3">
+<li><a href="#_plantuml">2.3.1. PlantUML</a></li>
+<li><a href="#_blockdiag-actdiag-nwdiag-und-seqdiag">2.3.2. blockdiag, actdiag, nwdiag und seqdiag</a></li>
+<li><a href="#_aufgabe-3">Aufgabe 3</a></li>
+</ul>
+</li>
+<li><a href="#_pdf-dokumente-generieren">2.4. PDF-Dokumente generieren</a>
+<ul class="sectlevel3">
+<li><a href="#_installation">2.4.1. Installation</a></li>
+<li><a href="#_anwendung">2.4.2. Anwendung</a></li>
+<li><a href="#_aufgabe-4">Aufgabe 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><a href="http://ovm-kassel.de" class="bare">http://ovm-kassel.de</a> | {kind}</th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>{kind} {ovm-code}</strong><br>
+  <strong>Dokumentieren mit Script und AsciiDoc</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="/u/images/Logo-RSBS-SVG_mini-blau.svg" alt="OvM-Logo" width="76" height="61"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ovm-code}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autor</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{author}<br>
+  {email}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datum</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{revdate}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lizenz</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="/u/images/cc-by-sa-88x31.png" alt="Creative Commons Lizenzvertrag"></a></span><br>
+Dieses Werk ist lizenziert unter einer<br>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shell-sessions-mit-script-documentieren">1. Shell-Sessions mit Script documentieren</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>test</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Shell-Sessions können unter Linux mit
+dem Programm Script aufgezeichnet werden.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 1. Aufzeichnung einer Shell-Session mit Script</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>$ script session1.log <i class="conum" data-value="1"></i><b>(1)</b>
+Skript gestartet, die Datei ist session1.log
+$ ssh user@192.168.178.28
+user@192.168.178.28's password:
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.10.0-28-generic x86_64)
+
+Last login: Thu May 10 18:58:28 2018 from 192.168.178.21
+user@ubuntu-vm:~$ ls
+Bilder     Downloads  Öffentlich    srv     Vorlagen
+Dokumente  Musik      Schreibtisch  Videos
+user@ubuntu-vm:~$ Abgemeldet <i class="conum" data-value="2"></i><b>(2)</b>
+Connection to 192.168.178.28 closed.
+[user@hostsystem ~]$ exit <i class="conum" data-value="3"></i><b>(3)</b>
+exit
+Skript wurde beendet, die Datei ist session1.log</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Startet Script und speichert die Aufzeichnung in der
+Datei <code>session1.log</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Die SSH-Session wird mit <span class="keyseq"><kbd>Strg</kbd>+<kbd>D</kbd></span> oder <code>exit</code> beendet.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Script wird mit <code>exit</code> beendet.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis kann mit <code>cat</code> angezeigt werden oder mit
+einem Texteditor wie z.&#160;B. GNU nano, gedit,
+emacs, vim, atom oder anderen bearbeitet, kommentiert
+und z.&#160;B. Teil eines AsciiDoc-Dokuments werden (s.&#160;u.).</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 2. Ausgabe der mit Script gespeicherten Shell-Session</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ cat session1.log
+Script started on <span style="color: #666666">2018</span>-05-11 <span style="color: #666666">08</span>:03:35+02:00
+<span style="color: #666666">[</span>user@hostsystem ~<span style="color: #666666">]</span>$ ssh user@192.168.178.28
+user@192.168.178.28<span style="border: 1px solid #FF0000">&#39;</span>s password:
+Welcome to Ubuntu <span style="color: #666666">16</span>.04.3 LTS <span style="color: #666666">(</span>GNU/Linux <span style="color: #666666">4</span>.10.0-28-generic x86_64<span style="color: #666666">)</span>
+
+Last login: Thu May <span style="color: #666666">10</span> <span style="color: #666666">18</span>:58:28 <span style="color: #666666">2018</span> from <span style="color: #666666">192</span>.168.178.21
+user@ubuntu-vm:~$ ls
+Bilder     Downloads  Öffentlich    srv     Vorlagen
+Dokumente  Musik      Schreibtisch  Videos
+user@ubuntu-vm:~$ Abgemeldet
+Connection to <span style="color: #666666">192</span>.168.178.28 closed.
+<span style="color: #666666">[</span>user@hostsystem ~<span style="color: #666666">]</span>$ <span style="color: #008000">exit</span>
+<span style="color: #008000">exit</span>
+
+Script <span style="color: #008000; font-weight: bold">done</span> on <span style="color: #666666">2018</span>-05-11 <span style="color: #666666">08</span>:04:13+02:00</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_monochrome-ausgabe-der-shell">Monochrome Ausgabe der Shell</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In vielen Linux-Distributionen enthält die Ausgabe im Terminal farbige
+Hervorhebungen. Diese führen zur Ausgabe von unerwünschten Zeichen
+in den Log-Dateien von Script. Die farbige Ausgabe wird in der
+Konfigurationsdatei der Shell gesteuert. Bei der Bash ist <code>~/.bashrc</code>
+diese Konfigurationsdatei.
+Um die farbige Ausgabe von Script zu unterbinden müssen mit einem
+Texteditor wie <code>nano</code> zwei Zeilen verändert werden.
+Änderungen in der <code>~/.bashrc</code> sind in allen neu gestarteten Terminals wirksam.
+In dem aktuellen Terminal können sie durch <code>source</code> aktiviert werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ <span style="color: #008000">source</span> ~/.bashrc</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Im Folgenden werden die beiden Stellen in der Datei <code>~/.bashrc</code> gezeigt,
+die geändert werden müssen.</p>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 1. Ursprüngliche <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">[</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$color_prompt</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">=</span> yes <span style="color: #666666">]</span>; <span style="color: #008000; font-weight: bold">then</span>
+    <span style="color: #19177C">PS1</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\0</span>
+<span style="color: #BA2121">33[01;34m\]\w\[\033[00m\]\$ &#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #008000; font-weight: bold">else</span>
+    <span style="color: #19177C">PS1</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #008000; font-weight: bold">fi</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Setzt einen farbigen Prompt.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Setzt einen monochromen Prompt.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 2. Geänderte <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">[</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$color_prompt</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">=</span> yes <span style="color: #666666">]</span> <span style="color: #666666">&amp;&amp;</span> false; <span style="color: #008000; font-weight: bold">then</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #19177C">PS1</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\0</span>
+<span style="color: #BA2121">33[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+<span style="color: #008000; font-weight: bold">else</span>
+    <span style="color: #19177C">PS1</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span style="color: #008000; font-weight: bold">fi</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Durch Einfügen von <code>&amp;&amp; false</code> wird stets der monochrome Prompt ausgewählt.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 3. Ursprüngliche <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #408080; font-style: italic"># enable color support of ls and also add handy aliases</span>
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">[</span> -x /usr/bin/dircolors <span style="color: #666666">]</span>; <span style="color: #008000; font-weight: bold">then</span>
+    <span style="color: #008000">test</span> -r ~/.dircolors <span style="color: #666666">&amp;&amp;</span> <span style="color: #008000">eval</span> <span style="color: #BA2121">&quot;</span><span style="color: #008000; font-weight: bold">$(</span>dircolors -b ~/.dircolors<span style="color: #008000; font-weight: bold">)</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">||</span> <span style="color: #008000">eval</span> <span style="color: #BA2121">&quot;</span><span style="color: #008000; font-weight: bold">$(</span>dircolors -b<span style="color: #008000; font-weight: bold">)</span><span style="color: #BA2121">&quot;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">ls</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;ls --color=auto&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #408080; font-style: italic">#alias dir=&#39;dir --color=auto&#39;</span>
+    <span style="color: #408080; font-style: italic">#alias vdir=&#39;vdir --color=auto&#39;</span>
+
+    <span style="color: #008000">alias</span> <span style="color: #19177C">grep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;grep --color=auto&#39;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">fgrep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;fgrep --color=auto&#39;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">egrep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;egrep --color=auto&#39;</span>
+<span style="color: #008000; font-weight: bold">fi</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Hier wir ein Alias für eine farbige Ausgabe mit <code>ls</code> gesetzt.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 4. Geänderte <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #408080; font-style: italic"># enable color support of ls and also add handy aliases</span>
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">[</span> -x /usr/bin/dircolors <span style="color: #666666">]</span> <span style="color: #666666">&amp;&amp;</span> false; <span style="color: #008000; font-weight: bold">then</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span style="color: #008000">test</span> -r ~/.dircolors <span style="color: #666666">&amp;&amp;</span> <span style="color: #008000">eval</span> <span style="color: #BA2121">&quot;</span><span style="color: #008000; font-weight: bold">$(</span>dircolors -b ~/.dircolors<span style="color: #008000; font-weight: bold">)</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">||</span> <span style="color: #008000">eval</span> <span style="color: #BA2121">&quot;</span><span style="color: #008000; font-weight: bold">$(</span>dircolors -b<span style="color: #008000; font-weight: bold">)</span><span style="color: #BA2121">&quot;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">ls</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;ls --color=auto&#39;</span>
+    <span style="color: #408080; font-style: italic">#alias dir=&#39;dir --color=auto&#39;</span>
+    <span style="color: #408080; font-style: italic">#alias vdir=&#39;vdir --color=auto&#39;</span>
+
+    <span style="color: #008000">alias</span> <span style="color: #19177C">grep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;grep --color=auto&#39;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">fgrep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;fgrep --color=auto&#39;</span>
+    <span style="color: #008000">alias</span> <span style="color: #19177C">egrep</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;egrep --color=auto&#39;</span>
+<span style="color: #008000; font-weight: bold">fi</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Das Setzen der Aliasse wird durch Einfügen von <code>&amp;&amp; false</code> unterbunden.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 5. Ursprüngliche <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #408080; font-style: italic"># If this is an xterm set the title to user@host:dir</span>
+<span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$TERM</span><span style="color: #BA2121">&quot;</span> in
+xterm*|rxvt*<span style="color: #666666">)</span>
+    <span style="color: #19177C">PS1</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;\[\e]0;</span><span style="color: #BB6688; font-weight: bold">${</span><span style="color: #19177C">debian_chroot</span>:+(<span style="color: #19177C">$debian_chroot</span>)<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">\u@\h: \w\a\]</span><span style="color: #19177C">$PS1</span><span style="color: #BA2121">&quot;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    ;;
+*<span style="color: #666666">)</span>
+    ;;
+<span style="color: #008000; font-weight: bold">esac</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Diese Anweisung ist für die Terminals in Ubuntu unnötig, führt aber
+dazu, dass bei Script der Prompt <code>user@host:dir</code> doppelt erscheint.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Quellcode 6. Ursprüngliche <code>~/.bashrc</code></div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span style="color: #408080; font-style: italic"># If this is an xterm set the title to user@host:dir</span>
+<span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$TERM</span><span style="color: #BA2121">&quot;</span> in
+xterm*|rxvt*<span style="color: #666666">)</span>
+<span style="color: #408080; font-style: italic">#    PS1=&quot;\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1&quot; </span><i class="conum" data-value="1"></i><b>(1)</b>
+    ;;
+*<span style="color: #666666">)</span>
+    ;;
+<span style="color: #008000; font-weight: bold">esac</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>In Shell-Scripts wird durch ein <code>#</code> am Zeilenanfang, diese Zeile
+&#8222;auskommentiert&#8220; und dadurch nicht mehr ausgeführt.
+Der Prompt <code>user@host:dir</code> erscheint nun in den Aufzeichnungen
+mit Script nur noch einfach.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aufgabe-1">Aufgabe 1</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Starten Sie die Aufzeichnung einer Shell-Session mit Script in einer
+Linux-VM und führen Sie die folgenden Arbeitschritte durch:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Erstellen Sie den Ordner <code>script_docs</code> mit <code>mkdir</code>.</p>
+</li>
+<li>
+<p>Legen Sie in diesem Ordner die Dateien <code>hello.adoc</code> und <code>ad.adoc</code>
+mit <code>touch</code> an.</p>
+</li>
+<li>
+<p>Fügen Sie <code>"Hallo Script"</code> der Datei <code>hello.adoc</code> mit
+<code>echo "Hallo Script" &gt;&gt; script_docs/hello.adoc</code> an.</p>
+</li>
+<li>
+<p>Fügen Sie der Datei <code>ad.adoc</code> die Zeile <code>"= Asciidoctor"</code> an.</p>
+</li>
+<li>
+<p>Lassen Sie mit <code>ls -l</code> den Inhalt des Ordners <code>script_docs</code> ausgeben
+und beenden Sie Script.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Überprüfen Sie anschließend mit <code>cat</code>, ob die Aufzeichnung erfolgreich war.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asciidoc">2. AsciiDoc</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://de.wikipedia.org/wiki/AsciiDoc">AsciiDoc</a> ist eine
+leichtgewichtige Markup-Sprache, wie z.&#160;B. auch
+<a href="https://de.wikipedia.org/wiki/Markdown">Markdown</a>.<br>
+<a href="http://asciidoctor.org">Asciidoctor</a> ist eine Ruby-Anwendung,
+die AsciiDoc-Dokumente in HTML5, PDF und andere Formate
+umwandelt.</p>
+</div>
+<div class="paragraph">
+<p>Ein AsciiDoc-Dokument wird mit einem Texteditor wie GNU nano, gedit,
+emacs, vim, atom oder anderen verfasst bzw. bearbeitet&#8201;&#8212;&#8201;Textverarbeitungsprogramme wie Word oder Writer sind nicht geeignet.
+Anschließend werden die AsciiDoc-Dateien in
+ein Ausgabeformat übersetzt wie PDF, HTML5, Docbook oder andere.</p>
+</div>
+<div class="sect2">
+<h3 id="_installation-von-asciidoctor">2.1. Installation von Asciidoctor</h3>
+<div class="paragraph">
+<p>Für Asciidoctor wird das Paket <code>ruby</code> benötigt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ sudo apt update
+$ sudo apt install ruby</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mit dem Paket <code>ruby</code> wird auch
+<a href="https://de.wikipedia.org/wiki/RubyGems">RubyGems</a>,
+das Paketsystem für Ruby installiert, dass zur Installation von
+<code>asciidoctor</code> verwendet wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ sudo gem install asciidoctor asciidoctor-diagram <i class="conum" data-value="1"></i><b>(1)</b>
+$ sudo apt update
+$ sudo apt install plantuml graphviz
+$ mkdir srv
+$ <span style="color: #008000">cd</span> srv
+$ nano index.adoc <i class="conum" data-value="2"></i><b>(2)</b>
+$ asciidoctor -r asciidoctor-diagram -b html index.adoc <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Installation von Asciidoctor und Asciidoctor Diagram mit RubyGems.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Erstellen eines AsciiDoc-Dokuments.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Mit <code>-r asciidoctor-diagram</code> wir die Erweiterung
+<a href="https://asciidoctor.org/docs/asciidoctor-diagram/">Asciidoctor Diagram</a>
+verwendet.</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect2">
+<h3 id="_erste-schritte">2.2. Erste Schritte</h3>
+<div class="paragraph">
+<p>Die wichtigsten Formatierungen werden anhand des folgenden Beispiels
+erläutert.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 3. Beispiel für ein AsciiDoc-Dokument</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="asciidoc"><span></span>= Shell-Sessions mit Asciidoctor dokumentieren <i class="conum" data-value="1"></i><b>(1)</b>
+André Bauer <i class="conum" data-value="2"></i><b>(2)</b>
+13. Mai 2018 <i class="conum" data-value="3"></i><b>(3)</b>
+
+Shell-Sessions, die mit Script aufgezeichnet wurden,
+werden mit vier Strichen (Minuszeichen bzw. &quot;dash&quot;)
+als Sourcecode-Block mit vorformatiertem Text
+eingerahmt.
+<i class="conum" data-value="4"></i><b>(4)</b>
+Zusätzlich kann mit der Angabe `[source, sh]` die <i class="conum" data-value="5"></i><b>(5)</b>
+Sprache angegeben werden. Hier ein Beispiel:
+
+[source,sh] <i class="conum" data-value="6"></i><b>(6)</b>
+---- <i class="conum" data-value="7"></i><b>(7)</b>
+user@ubuntu-vb:~$ cd srv/
+user@ubuntu-vb:~/srv$ ls
+index.adoc  index.html  index.pdf  inheritance.svg
+user@ubuntu-vb:~/srv$ touch diagramme.adoc <1> <i class="conum" data-value="8"></i><b>(8)</b>
+user@ubuntu-vb:~/srv$ echo &quot;= Diagramme mit Asciidoctor&quot; &gt;&gt; diagramme.adoc
+user@ubuntu-vb:~/srv$ cat diagramme.adoc
+= Diagramme mit Asciidoctor
+----
+&lt;1&gt; Erzeugt die Datei `diagramme.adoc`. <i class="conum" data-value="9"></i><b>(9)</b>
+
+== Generieren einer HTML5-Datei <i class="conum" data-value="10"></i><b>(10)</b>
+
+Ein AsciiDoc-Dokument wird dann mit dem folgenden Befehl in eine
+HTML-Datei umgewandelt.
+
+[source,sh]
+----
+$ asciidoctor -r asciidoctor-diagram -b html index.adoc
+----
+
+== Anzeigen mit Firefox
+
+Mit `firefox index.html` wird diese im Browser angezeigt.</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Der Dokumententitel wird zu Beginn des Dokuments mit einem <code>=</code>-Zeichen angegeben.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Die Angabe des Autors folgt in der Zeile nach dem Dokumententitel.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Das Datum wird direkt in der Zeile nach dem Autor angegeben.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Abschnitte werden durch Leerzeilen getrennt.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Mit Akzentzeichen (backticks) wird der Text für Kommandos oder
+Sourcecode-Ausschnitte in
+<a href="https://de.wikipedia.org/wiki/Nichtproportionale_Schriftart">Festbreitenschrift</a>
+gesetzt.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>In den eckigen Klammern kann nach der Angabe <code>source</code>
+die verwendete Sprache, wie z.&#160;B. <code>java</code> oder <code>sh</code> für Shell,
+eingetragen werden. Dadurch wir die
+<a href="https://de.wikipedia.org/wiki/Syntaxhervorhebung">Syntax farblich hervorgehoben</a>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Shell-Befehle bzw. Source-Code-Blöcke werden mit mit vier Minuszeichen
+(dash) als vorformatierter Text gekennzeichnet bzw. eingerahmt.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Callout-Nummern werden im Source-Code-Block mit eckigen Klammern am Ende der
+Zeile eingetragen, d.&#160;h. <code>&lt;1&gt;, &lt;2&gt;</code> usw.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Callouts werden direkt nach dem Source-Code-Block erläutert.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>Überschriften werden mit zwei oder mehreren <code>=</code>-Zeichen eingeleitet.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Das AsciiDoc-Dokument wird anschließend mit dem im Beispiel angegebenen
+Kommando übersetzt und kann dann im Browser angezeigt werden.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 4. Browserdarstellung eines mit Asciidoctor generieten HTML5-Dokumentes</div>
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/u/images/asciidoc-basis-beispiel.svg" alt="asciidoc basis beispiel">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen, wie man ein AsciiDoc-Dokument gestalten kann,
+stehen im
+<a href="https://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoc Writer’s Guide</a>
+und im
+<a href="https://asciidoctor.org/docs/user-manual/">Asciidoctor User Manual</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aufgabe-2">Aufgabe 2</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellen Sie aus der aufgezeichneten Shell-Session aus Aufgabe 1 ein
+AsciiDoc-Dokument, indem Sie Titelangaben und Erläuterungen hinzufügen
+sowie die Shell-Kommandos als Sourcecode-Blöcke kennzeichen und
+Callouts einfügen.
+Generieren Sie mit Asciidoctor aus der AsciiDoc-Datei eine HTML5-Datei
+und überprüfen Sie das Ergebnis im Browser.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_diagramme-mit-asciidoctor-erstellen">2.3. Diagramme mit Asciidoctor erstellen</h3>
+<div class="paragraph">
+<p>Über die Erweiterung
+<a href="https://asciidoctor.org/docs/asciidoctor-diagram/">Asciidoctor Diagram</a>
+können Diagram-Beschreibungen
+direkt in AsciiDoc-Dokumente eingebettet werden. Asciidoctor sorgt dann
+automatisch für die Übersetzung und fügt die erzeugten Grafiken dann als
+Bilder ein. Vorraussetzung ist, dass die dazu notwendigen Programme
+installiert sind.</p>
+</div>
+<div class="sect3">
+<h4 id="_plantuml">2.3.1. PlantUML</h4>
+<div class="paragraph">
+<p><a href="http://plantuml.com/">PlantUML</a> ist eine Werkzeug, um (UML-)Diagramme zu
+erstellen. Über die Erweiterung Asciidoctor Diagram kann man
+PlantUML-Diagramme direkt in AsciiDoc-Dokumenten beschreiben.
+Diese werden in
+<a href="https://de.wikipedia.org/wiki/Portable_Network_Graphics">PNG-Grafiken</a> oder
+<a href="https://de.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG-Grafiken</a>
+übersetzt.</p>
+</div>
+<div class="paragraph">
+<p>Für PlantUML gibt es u.&#160;a. Plug-Ins für
+<a href="http://plantuml.com/eclipse">Eclispe</a> und
+<a href="https://plugins.jetbrains.com/plugin/7017-plantuml-integration">Jet Brains IDEs wie IntelliJ IDEA</a>.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 5. Beispiel für die Verwendung von PlantUML in einem AsciiDoc-Dokument und Ausgabe im Browser</div>
+<div class="content">
+<table class="tableblock frame-none grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">AsciiDoc</th>
+<th class="tableblock halign-left valign-top">Darstellung im Browser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="asciidoc"><span></span>== Assoziation zwischen den Klassen A und B
+
+[plantuml, class-association, svg] <i class="conum" data-value="1"></i><b>(1)</b>
+.... <i class="conum" data-value="2"></i><b>(2)</b>
+class A
+
+class B
+
+A -up-&gt; B
+....</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>In den eckigen Klammern wird das Diagrammwerkzeug, der Dateiname und
+das Zielformat festgelegt. Hier wird die Diagramm-Beschreibung mit PlantUML
+in eine SVG-Grafik übersetzt und in der Datei <code>class-association.svg</code>
+gespeichert.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Diagramm-Beschreibungen werden als Block mit vier Punkten eingerahmt.</td>
+</tr>
+</table>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><h2 id="_assoziation-zwischen-den-klassen-a-und-b" class="discrete">Assoziation zwischen den Klassen A und B</h2>
+<div class="imageblock">
+<div class="content">
+<img src="/u/images/dsa-class-association.svg" alt="dsa class association">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Diagramm-Beschreibungs-Sprache von PlantUML ist anhand zahlreicher
+Beispiel unter
+<a href="http://plantuml.com/">PlantUML.com</a> sowie im
+<a href="http://plantuml.com/PlantUML_Language_Reference_Guide.pdf">PlantUML Language Reference Guide</a>
+dokumentiert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_blockdiag-actdiag-nwdiag-und-seqdiag">2.3.2. blockdiag, actdiag, nwdiag und seqdiag</h4>
+<div class="paragraph">
+<p>Die Programme
+<a href="http://blockdiag.com/en/">blockdiag, seqdiag, actdiag und nwdiag</a>
+übersetzen --&#160;ähnlich wie PlantUML&#160;-- Diagramm-Beschreibungen
+in Grafiken.</p>
+</div>
+<div class="paragraph">
+<p>Sie können unter Ubuntu über das Paketmanagment-System installiert werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo apt update
+$ sudo apt install python-blockdiag python-actdiag python-nwdiag python-seqdiag</pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect3">
+<h4 id="_aufgabe-3">Aufgabe 3</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Fügen Sie Ihrem AsciiDoc-Dokument aus den Aufgaben 1 und 2 eine
+Diagramm-Beschreibung für die nebenstehende Grafik
+mit PlantUML hinzu und lassen Sie
+Asciidoctor daraus ein HTML5-Dokument mit SVG-Grafik erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Hilfe zum Erstellen einer solchen
+Grafik finden Sie unter <a href="http://plantuml.com/deployment-diagram" class="bare">http://plantuml.com/deployment-diagram</a>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="/u/images/dsa-plantuml-deployment.svg" alt="dsa plantuml deployment">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pdf-dokumente-generieren">2.4. PDF-Dokumente generieren</h3>
+<div class="paragraph">
+<p>PDF-Dokumente werden aus Asciidoc-Dokumenten mit der Erweiterung
+<a href="https://asciidoctor.org/docs/asciidoctor-pdf/">Asciidoctor PDF</a>
+durch Angabe von <code>-r asciidoctor-pdf</code> und des Ausgabeformats mit <code>-b pdf</code>
+generiert.</p>
+</div>
+<div class="sect3">
+<h4 id="_installation">2.4.1. Installation</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ sudo gem install asciidoctor-pdf --pre</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_anwendung">2.4.2. Anwendung</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ asciidoctor -r asciidoctor-diagram -r asciidoctor-pdf -b pdf -a allow-uri-read index.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für PDF-Dokumente gibt es unter Linux verschiedenen Viewer wie <code>evince</code>
+oder <code>atril</code>, die die Dokumente nach Änderungen automatisch neu laden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>$ evince index.pdf &amp;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aufgabe-4">Aufgabe 4</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Generieren Sie aus Ihrem AsciiDoc-Dokument aus den Aufgaben 1-3 eine PDF-Datei,
+die Sie in Ihr E-Portfolio einbinden.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
+
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+
+</div>
+
+	<div class="sm:w-128 min-w-0 mr-4">
+	  <!-- Lizenz -->
+	</div>
+      </div>
+      
+      
+    </footer>
+  </div>
+</div>
+</div>
+    <div id="tocfloat" class="hidden">
+    </div>
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
+  </body>
+</html>
