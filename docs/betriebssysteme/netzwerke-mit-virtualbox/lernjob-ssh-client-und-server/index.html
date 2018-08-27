@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Lernjob Ssh Client Und Server | OVM-Unterrichtsmaterial</title>
+<title>SSH-Client und -Server | OVM-Unterrichtsmaterial</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Lernjob Ssh Client Und Server" />
+<meta property="og:title" content="SSH-Client und -Server" />
 <meta name="author" content="André Bauer" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme." />
@@ -14,9 +14,9 @@
 <meta property="og:url" content="http://localhost:4000/u/docs/betriebssysteme/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server/" />
 <meta property="og:site_name" content="OVM-Unterrichtsmaterial" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-27T04:52:42+02:00" />
+<meta property="article:published_time" content="2018-08-27T13:14:39+02:00" />
 <script type="application/ld+json">
-{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"Lernjob Ssh Client Und Server","dateModified":"2018-08-27T04:52:42+02:00","datePublished":"2018-08-27T04:52:42+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/u/docs/betriebssysteme/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server/"},"url":"http://localhost:4000/u/docs/betriebssysteme/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
+{"description":"Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.","headline":"SSH-Client und -Server","dateModified":"2018-08-27T13:14:39+02:00","datePublished":"2018-08-27T13:14:39+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/u/docs/betriebssysteme/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server/"},"url":"http://localhost:4000/u/docs/betriebssysteme/netzwerke-mit-virtualbox/lernjob-ssh-client-und-server/","author":{"@type":"Person","name":"André Bauer"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!-- jQuery library -->
@@ -32,52 +32,81 @@
   <script src="/u/assets/vendor/d3.min.js"></script>
   <script src="/u/assets/vendor/function-plot.js"></script>
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/u/feed.xml" title="OVM-Unterrichtsmaterial" /></head>
-<body ><div id="navbar-top" class="px-0">
-  <nav id="navbar-top-nav" class="navbar navbar-expand-md bg-blue-lightest fixed-top border-b border-dotted border-blue-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="/">
-      <img src="/u/images/Logo-RSBS-SVG_mini-blau.svg" alt="OvM-Kassel" style="width:40px;">
-    </a>
-    
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-	
-      </ul>
-    </div>
-  </nav>
-</div>
-<div id="after-navbar" class="md:flex md:flex-row top-16">
-      <div class="md:w-1/4">
+<body class="bg-grey-lighter p-0 h-full">
+    <div class="flex flex-col min-h-screen bg-blue-lightest"><div class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto px-4 py-2 my-2">
+    <div class="sm:flex flex-row">
+      <div class="sm:w-1/4">
+	<a class="" href="/u/">
+	  <img src="/u/images/Logo-RSBS-SVG_mini-weiss.svg" alt="OvM-Kassel" style="width:50px;">
+	</a>
       </div>
-      <div id="sidebar-left" class="md:w-1/4 z-90 md:block sidenav">
-	<div class="md:block md:relative md:stickly overflow-y-auto ">
-	  <aside>
-	    <nav>
-	      <div id="toc-left" class="md:mytoc">
-	      </div>
-	    </nav>
-	  </aside>
+      <div class="sm:w-3/4">
+	<p class="text-xl mb-0 pt-2 text-lightest">
+	  
+	  
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<nav id="tw-navigation" class="bg-blue-dark">
+  <div class="max-w-2xl mx-auto">
+    <div class="sm:flex sm:flex-row sm:flex-wrap  px-4">
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+</nav>
+
+
+<div id="tw-main" class="flex-1">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative hidden 
+		  
+		  md:block md:w-64 min-w-0
+		  
+		  md:w-1/4
+		  ">
+	<div id="md-toc"
+	     class="max-h-screen pr-2 overflow-y-auto absolute">
+	<!-- h-full sticky pin-t max-h-screen overflow-y-auto -->
 	</div>
       </div>
-    
-      <div class="p-2 md:w-3/4 flex-1">
-	<main class="page-content" aria-label="Content">
-	  <div >
-	    <div class="max-w-2xl">
-              <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Lernjob Ssh Client Und Server</h1>
+      <div class="flex flex-col w-full 
+		  
+		  md:w-3/4 p-2
+		  
+		  "><div class="mb-6 mt-4">
+  <header>
+    <div>22. Mai 2018 |
+      <h3 class="text-lg inline">Lernjob IT-AE-PR-LS-1.2 </h3></div>
+    <h1 class="text-5xl mt-2">SSH-Client und -Server</h1><p>
+      
+      André Bauer
+      
+      <span class="whitespace-no-wrap ml-2">
+	
+	
+	
+      </span>
+    </p>
   </header>
 
-  <div class="post-content">
-    <div id="toc" class="toc">
+</div>
+<div id="all-toc" class="md:hidden
+				 
+				 ">
+	</div>
+	<div class="mb-6">
+	  <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel0">
 <li><a href="#_ssh-client-und-server">SSH-Client und -Server</a>
@@ -131,8 +160,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autor</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{author}<br>
-  {email}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">André Bauer<br>
+  &lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datum</strong></p></td>
@@ -597,61 +626,59 @@ wie in <a href="#scp-to-server">Beispiel 4</a> und <a href="#scp-from-server">Be
 </div>
 </div>
 </div>
-  </div>
-
-</article>
-
-	    </div>
-	  </div>
-	  <div class="tocfloat"></div>
-	</main><footer class="site-footer h-card">
-  <data class="u-url" href="/u/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">OVM-Unterrichtsmaterial</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">André Bauer</li><li><a class="hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul>
+	</div>
       </div>
+    </div>
+  </div>
+</div>
+<div id="tw-footer" class="bg-blue-dark text-lightest">
+  <div class="max-w-2xl mx-auto">
+    <footer class="">
+      <data class="u-url" href="/u/"></data>
 
-      <div class="footer-col footer-col-2"><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
+      <div class="px-4">
+	<h2 class="text-xl font-normal text-lightest">
+	  OVM-Unterrichtsmaterial
+	</h2>
+      </div>
+      
+      <div class="sm:flex sm:flex-row sm:flex-wrap px-4">
+
+	<div class="sm:w-64 min-w-0 mr-4">
+	  <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	</div>
+
+	<div class="sm:w-64 min-w-0 mr-4 mb-4">
+	  <ul class="ml-0 mb-0 list-reset text-lightest">
+	    <li class="">André Bauer</li><li><a class="text-lightest hover:text-white" href="mailto:&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;">&lt;a(dot)bauer(at)ovm-kassel(dot)de&gt;</a></li></ul><ul class="ml-0 mb-0 list-reset"><li><a class="text-lightest hover:text-white" href="https://github.com/andrebauer"><svg class="w-4 h-4 mr-1"><use xlink:href="/u/assets/minima-social-icons.svg#github"></use></svg> <span class="username">andrebauer</span></a></li></ul>
 
 </div>
 
-      <div class="footer-col footer-col-3">
-        <p>Unterrichtsmaterial zu den Themen Anwendungsentwicklung, Mathematik und Betriebssysteme.</p>
+	<div class="sm:w-64 min-w-0 mr-4"><p class="">
+	    <p>
+	    <span class="image">
+	      <a class="image"
+		 href="https://creativecommons.org/licenses/by-sa/4.0/">
+		<img src="/u/images/cc-by-sa-88x31.png"
+		     alt="Creative Commons Lizenzvertrag">
+	      </a>
+	    </span>
+	    </p>
+	    <p>
+	      Dieses Werk ist lizenziert unter einer
+	      <a class="text-lightest hover:text-white" href="https://creativecommons.org/licenses/by-sa/4.0/">
+		Creative Commons Namensnennung -
+		Weitergabe unter gleichen Bedingungen 4.0 International Lizenz.
+	      </a>
+	    </p>
+	  </p></div>
       </div>
-    </div>
-
+    </footer>
   </div>
-
-</footer>
 </div>
+</div>
+    <div id="tocfloat" class="hidden">
     </div>
-    
-
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-	messageStyle: "none",
-	tex2jax: {
-	  inlineMath: [["\\(", "\\)"]],
-	  displayMath: [["\\[", "\\]"]],
-	  ignoreClass: "nostem|nolatexmath"
-	},
-	asciimath2jax: {
-	  delimiters: [["\\$", "\\$"]],
-	  ignoreClass: "nostem|noasciimath"
-	},
-	TeX: { equationNumbers: { autoNumber: "none" } }
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="/u/assets/js/ovm.js" charset="utf-8"></script>
-
+    <script type="text/javascript" src="/u/assets/js/tw-ovm.js" charset="utf-8"></script>
   </body>
 </html>
